@@ -7,7 +7,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname
     validates :name
-    validates :postal_code
+    validates :postal_code, format: { with: /\A\d{7}\z/, message: "数字７桁で入力してください"}
     validates :address
     validates :phone_number
   end
