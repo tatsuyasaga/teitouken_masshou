@@ -1,0 +1,13 @@
+.side_bar {
+  width: 30vw;
+  height: 100vh;
+  border-right: solid 1px black;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  margin-bottom: 15px;
+}
