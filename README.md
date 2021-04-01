@@ -19,38 +19,46 @@
 
 ## chats テーブル
 
-| Column            | Type    | Options     |
-| ----------------- | ------- | ----------- |
-| procedure_name_id | integer | null: false |
-| comment           | text    | null: false |
-| evaluation_id     | integer | null: false |
+| Column            | Type    | Options                        |
+| ----------------- | ------- | ------------------------------ |
+| procedure_name_id | integer | null: false                    |
+| comment           | text    | null: false                    |
+| evaluation_id     | integer | null: false                    |
+| user_id           | integer | null: false, foreign_key: true |
 
 - belongs_to :user
 
 ## application_data テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| reason_date      | date    | null: false |
-| reason           | string  | null: false |
-| receipt_number   | string  | null: false |
-| catalog_number   | string  |             |
-| application_date | date    |             |
-| destination_id   | integer | null: false |
-| tax              | integer | null: false |
+| Column           | Type    | Options                        |
+| ---------------- | ------- | ------------------------------ |
+| reason_date      | date    | null: false                    |
+| reason           | string  | null: false                    |
+| receipt_number   | string  | null: false                    |
+| catalog_number   | string  |                                |
+| application_date | date    |                                |
+| destination_id   | integer | null: false                    |
+| tax              | integer | null: false                    |
+| user_id          | integer | null: false, foreign_key: true |
+
 
 ### Association
 
 - belongs_to :user
+- has_many :other_parties
+- has_many :lands
+- has_many :buildings
 
 ## other_party テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| address | string | null: false |
-| name    | string | null: false |
-| ceo     | string | null: false |
-| number  | string | null: false |
+| Column                | Type    | Options                        |
+| --------------------- | ------- | ------------------------------ |
+| address               | string  | null: false                    |
+| name                  | string  | null: false                    |
+| ceo                   | string  | null: false                    |
+| number                | string  | null: false                    |
+| application_datum_id  | integer | null: false, foreign_key: true |
+
 
 ### Association
 
@@ -58,14 +66,16 @@
 
 ## lands テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| number        | integer | null: false |
-| branch_number | integer |             |
-| type_id       | integer | null: false |
-| acreage       | integer | null: false |
+| Column                | Type    | Options                        |
+| --------------------- | ------- | ------------------------------ |
+| prefecture_id         | integer | null: false                    |
+| city                  | string  | null: false                    |
+| number                | integer | null: false                    |
+| branch_number         | integer |                                |
+| type_id               | integer | null: false                    |
+| acreage               | integer | null: false                    |
+| application_datum_id  | integer | null: false, foreign_key: true |
+
 
 ### Association
 
@@ -73,15 +83,17 @@
 
 ## buildings テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| number        | integer | null: false |
-| branch_number | integer |             |
-| use_id        | integer | null: false |
-| construction  | striong | null: false |
-| floor_space   | text    | null: false |
+| Column                | Type    | Options                        |
+| --------------------- | ------- | ------------------------------ |
+| prefecture_id         | integer | null: false                    |
+| city                  | string  | null: false                    |
+| number                | integer | null: false                    |
+| branch_number         | integer |                                |
+| use_id                | integer | null: false                    |
+| construction          | striong | null: false                    |
+| floor_space           | text    | null: false                    |
+| application_datum_id  | integer | null: false, foreign_key: true |
+
 
 ### Association
 
