@@ -52,3 +52,7 @@ class Destination < ActiveHash::Base
     { id: 50, name: "宮崎地方法務局" },
     { id: 51, name: "那覇地方法務局" }
 ]
+
+  include ActiveHash::Associations
+  has_many :application_data
+end

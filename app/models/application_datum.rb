@@ -8,5 +8,6 @@ class ApplicationDatum < ApplicationRecord
   end
 
   belongs_to :user
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :destination_id
 end
