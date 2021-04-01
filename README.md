@@ -56,7 +56,7 @@
 | address               | string  | null: false                    |
 | name                  | string  | null: false                    |
 | ceo                   | string  | null: false                    |
-| number                | string  | null: false                    |
+| number                | integer | null: false                    |
 | application_datum_id  | integer | null: false, foreign_key: true |
 
 
