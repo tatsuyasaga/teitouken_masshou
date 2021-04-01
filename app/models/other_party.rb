@@ -1,0 +1,2 @@
+class OtherParty < ApplicationRecord
+end
