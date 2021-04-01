@@ -34,7 +34,7 @@
 | reason_date      | date    | null: false |
 | reason           | string  | null: false |
 | receipt_number   | string  | null: false |
-| catalog_number   | string  | null: false |
+| catalog_number   | string  |             |
 | application_date | date    |             |
 | destination_id   | integer | null: false |
 | tax              | integer | null: false |

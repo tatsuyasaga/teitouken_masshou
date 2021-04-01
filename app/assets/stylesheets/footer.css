@@ -1,0 +1,10 @@
+footer {
+  width: 100vw;
+  text-align: center;
+  border-top: solid 1px black;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: center;
+}
