@@ -1,7 +1,7 @@
 登記申請書を完成させるために下記の質問にご回答ください。
 
 <%# 質問事項 %>
-<%= form_with model:@application_datum_other_party_land_building ,url: "#", local: true do |f| %>
+<%= form_with  url: "#", local: true do |f| %>
   <div class="annotation">抵当権が抹消した日付</div>
     <%= raw sprintf(
                 f.date_select(
@@ -40,7 +40,7 @@
     <%= f.text_field :land_city, class:"land_city", placeholder:"市町村 例）千代田区千代田" %>
     <%= f.text_field :land_number, class:"land_number", placeholder:"地番" %>
     <%= f.text_field :land_branch_number, class:"land_branch_number", placeholder:"枝番" %>
-    <%= f.collection_select(:type_id, type.all, :id, :name,{},{class:"type"}) %>
+    <%= f.collection_select(:type_id, Type.all, :id, :name,{},{class:"type"}) %>
     <%= f.text_field :land_acreage, class:"land_acreage", placeholder: "地積 例）100.01平方メートル" %>
 
   <div class="annotation">建物の情報</div>
@@ -49,8 +49,8 @@
     <%= f.text_field :building_number, class:"building_number", placeholder:"家屋番号" %>
     <%= f.text_field :building_branch_number, class:"building_branch_number", placeholder:"枝番" %>
     <%= f.collection_select(:use_id, Use.all, :id, :name,{},{class:"use"}) %>
-    <%= f.text_field :construction class:"building_construction", placeholder:"構造 例）木造かわら葺２階建" %>
-    <%= f.textarea :building_floor_space, class:"building_floor_space", placeholder: "床面積 例）１階 100.01平方メートル\r２階 50.10平方メートル" %>
+    <%= f.text_field :construction, class:"building_construction", placeholder:"構造 例）木造かわら葺２階建" %>
+    <%= f.text_area :building_floor_space, class:"building_floor_space", placeholder: "床面積 例）１階 100.01平方メートル\r２階 50.10平方メートル" %>
 
   <div class="annotation">登録免許税額（自動で計算しますのでご入力いただかなくて構いません）</div>
     <%= f.text_field :tax, class:"tax" %>
