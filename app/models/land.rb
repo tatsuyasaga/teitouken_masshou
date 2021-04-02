@@ -5,4 +5,7 @@ class Land < ApplicationRecord
     validates :number
     validates :type_id, numericality: {other_than: 1, message: "Select"}
     validates :acreage
+  end
+
+  belongs_to :application_datum
 end
