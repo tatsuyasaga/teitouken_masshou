@@ -27,7 +27,7 @@
     <%= f.text_field :other_party_address, class:"other-party-address", placeholder:"住所" %> 
     <%= f.text_field :other_party_name, class:"other-party-name", placeholder:"例）株式会社〇〇" %>  
     <%= f.text_field :other_party_ceo, class:"other-party-ceo", placeholder:"例）代表取締役 〇〇" %>
-    <%= f.number_field :other_party_number, class:"other-party-number", placeholder:"12桁の数字" %>  
+    <%= f.text_field :other_party_number, class:"other-party-number", placeholder:"12桁の数字" %>  
 
   <div class="annotation">申請書を法務局に提出する年月日</div>
     <%= f.date_field :application_date, selected: Date.today %>
