@@ -62,7 +62,7 @@
 
 ### Association
 
-- belongs_to :application_data
+- belongs_to :application_datum
 
 ## lands テーブル
 
@@ -79,7 +79,7 @@
 
 ### Association
 
-- belongs_to :application_data
+- belongs_to :application_datum
 
 ## buildings テーブル
 
@@ -97,4 +97,4 @@
 
 ### Association
 
-- belongs_to :application_data
+- belongs_to :application_datum
