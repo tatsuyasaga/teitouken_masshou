@@ -73,7 +73,7 @@
 | number                | integer | null: false                    |
 | branch_number         | integer |                                |
 | type_id               | integer | null: false                    |
-| acreage               | integer | null: false                    |
+| acreage               | text    | null: false                    |
 | application_datum_id  | integer | null: false, foreign_key: true |
 
 
@@ -90,7 +90,7 @@
 | number                | integer | null: false                    |
 | branch_number         | integer |                                |
 | use_id                | integer | null: false                    |
-| construction          | striong | null: false                    |
+| construction          | string  | null: false                    |
 | floor_space           | text    | null: false                    |
 | application_datum_id  | integer | null: false, foreign_key: true |
 
