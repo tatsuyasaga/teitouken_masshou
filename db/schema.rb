@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_064250) do
+ActiveRecord::Schema.define(version: 2021_04_01_150218) do
 
   create_table "application_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "reason_date", null: false
@@ -22,6 +22,44 @@ ActiveRecord::Schema.define(version: 2021_03_30_064250) do
     t.integer "tax", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id", null: false
+    t.bigint "application_datum_id_id", null: false
+    t.string "city", null: false
+    t.integer "number", null: false
+    t.integer "branch_number", null: false
+    t.integer "use_id", null: false
+    t.string "construction", null: false
+    t.string "floor_space", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["application_datum_id_id"], name: "index_buildings_on_application_datum_id_id"
+  end
+
+  create_table "lands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.integer "number", null: false
+    t.integer "branch_number"
+    t.integer "type_id", null: false
+    t.text "acreage", null: false
+    t.bigint "application_datum_id_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["application_datum_id_id"], name: "index_lands_on_application_datum_id_id"
+  end
+
+  create_table "other_parties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "address", null: false
+    t.string "name", null: false
+    t.string "ceo", null: false
+    t.integer "number", null: false
+    t.bigint "application_datum_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["application_datum_id"], name: "index_other_parties_on_application_datum_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,4 +79,5 @@ ActiveRecord::Schema.define(version: 2021_03_30_064250) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "other_parties", "application_data"
 end

@@ -1,6 +1,6 @@
 class Destination < ActiveHash::Base
   self.data = [
-    { id: 1, name: "--" },
+    { id: 1, name: "管轄の法務局を選択" },
     { id: 2, name: "札幌法務局" },
     { id: 3, name: "函館地方法務局" },
     { id: 4, name: "旭川地方法務局" },
@@ -52,3 +52,7 @@ class Destination < ActiveHash::Base
     { id: 50, name: "宮崎地方法務局" },
     { id: 51, name: "那覇地方法務局" }
 ]
+
+  include ActiveHash::Associations
+  has_many :application_data
+end
