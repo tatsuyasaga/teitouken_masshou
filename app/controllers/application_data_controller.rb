@@ -11,5 +11,4 @@ class ApplicationDataController < ApplicationController
   def create
   end
 
-
 end
