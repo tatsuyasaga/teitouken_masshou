@@ -24,3 +24,11 @@
 .application-data-main {
   padding: 0px 0px 30px 100px;
 }
+
+.input-reason-date {
+  display: flex;
+}
+
+.annotation {
+  margin-top: 15px;
+}
