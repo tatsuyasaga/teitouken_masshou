@@ -12,11 +12,15 @@
 }
 
 .application-data-title {
-  margin: 15px 0px;
+  margin: 15px 0px 30px;
   display: flex;
   justify-content: center;
 }
 
 #application-data-title {
   border-bottom: 1px solid black;
+}
+
+.application-data-main {
+  padding: 0px 0px 30px 100px;
 }
