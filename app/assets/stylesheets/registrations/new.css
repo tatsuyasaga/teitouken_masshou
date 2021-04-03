@@ -1,4 +1,18 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
 h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  margin: 0px 0px 10px 250px;
+}
+
+.actions {
   display: flex;
   justify-content: center;
 }
