@@ -17,4 +17,15 @@
 .right-side {
   width: 70vw;
   height: 100%;
+  position: relative;
+}
+
+.head {
+  text-align: center;
+}
+
+.foot {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
 }
