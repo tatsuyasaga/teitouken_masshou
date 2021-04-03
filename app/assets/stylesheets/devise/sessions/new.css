@@ -1,0 +1,28 @@
+.session-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-wrapper2 {
+  border: 1px double black;
+  padding: 0px 50px 20px;
+}
+
+.session-title {
+  margin-bottom: 25px;
+}
+
+#session-remenberable {
+  margin-bottom: 35px;
+}
+
+.session-actions {
+  text-align: center;
+}
+
+.session-foot {
+  text-align: center;
+}
