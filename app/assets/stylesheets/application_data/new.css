@@ -1,0 +1,22 @@
+.application-data-header {
+  display: flex;
+  justify-content: center;
+  
+}
+.application-data-back {
+  margin-right: 15px;
+}
+
+.application-data-save {
+  margin-left: 15px;
+}
+
+.application-data-title {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#application-data-title {
+  border-bottom: 1px solid black;
+}

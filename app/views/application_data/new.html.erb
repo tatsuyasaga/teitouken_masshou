@@ -1,4 +1,15 @@
-登記申請書を完成させるために下記の質問にご回答ください。
+<div class="application-data-header">
+  <div class="application-data-back">
+    <%= link_to "トップページに戻る", root_path %>
+  </div>
+  <div class="application-data-save">
+    <%= link_to "入力内容を保存して終了する", "#" %>
+  </div>
+</div>
+
+<div class="application-data-title">
+  <h3 id="application-data-title">登記申請書を完成させるために下記の質問にご回答ください。<h3>
+</div>
 
 <%# 質問事項 %>
 <%= form_with  url: "#", local: true do |f| %>
