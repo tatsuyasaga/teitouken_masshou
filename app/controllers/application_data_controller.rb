@@ -11,5 +11,8 @@ class ApplicationDataController < ApplicationController
   def create
   end
 
-
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+  end
 end
