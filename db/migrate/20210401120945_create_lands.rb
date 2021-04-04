@@ -7,7 +7,7 @@ class CreateLands < ActiveRecord::Migration[6.0]
       t.integer :branch_number
       t.integer :type_id,                 null: false
       t.text :acreage,                    null: false
-      t.references :application_datum_id, null: false
+      t.references :application_datum,    foreign_key: true
       t.timestamps
     end
   end

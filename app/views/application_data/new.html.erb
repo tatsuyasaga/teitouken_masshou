@@ -12,12 +12,12 @@
   金融機関から受領した書類と登記簿謄本をご確認しながら下記の質問にご回答ください。<h3>
 </div>
 
-<%#= render "shared/error_messages", model:%>
+<%= render "shared/error_messages", model: @application_datum_other_party_land_building%>
 
 <%# 質問事項 %>
 <body>
   <div class="application-data-main">
-    <%= form_with  url: "#", local: true do |f| %>
+    <%= form_with model: @application_datum_other_party_land_building, url: application_data_path, local: true do |f| %>
       <div class="annotation">抵当権が消滅した年月日（住宅ローンを完済した年月日）</div>
         <div class="input-reason-date"> 
           <%= raw sprintf(
@@ -65,7 +65,7 @@
 
       <div class="annotation">土地の情報（登記簿謄本通りにご入力ください）</div>
         <div class="address">・所在（例　福岡県福岡市中央区天神一丁目）
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
+          <%= f.collection_select(:land_prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
           <%= f.text_area :land_city, class:"city" %>
         </div>
 
@@ -84,7 +84,7 @@
 
       <div class="annotation">建物の情報（登記簿藤本通りにご入力ください）</div>
         <div class="address">・所在地（福岡県福岡市中央区天神一丁目１番地１）
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
+          <%= f.collection_select(:building_prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
           <%= f.text_area :building_city, class:"city" %>
         </div>
 
