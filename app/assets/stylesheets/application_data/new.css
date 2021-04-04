@@ -18,11 +18,12 @@
 }
 
 #application-data-title {
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  text-align: center;
 }
 
 .application-data-main {
-  padding: 0px 0px 30px 100px;
+  margin: 0px 0px 30px 100px;
 }
 
 .input-reason-date {
@@ -31,4 +32,109 @@
 
 .annotation {
   margin-top: 15px;
+}
+
+.other-party-info {
+  display: flex;
+  flex-flow: column;
+}
+
+.other-party-address {
+  width: 450px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.other-party-name {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.other-party-ceo {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.other-party-number {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.address {
+  display: flex;
+  flex-flow: column;
+}
+
+.prefecture {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.city {
+  width: 450px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.address-number {
+  display: flex;
+  flex-flow: column;
+}
+
+.number {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.branch-number {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.type {
+  display: flex;
+  flex-flow: column;
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.input-land-acreage {
+  display: flex;
+  flex-flow: column;
+}
+
+.land-acreage {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.input-construction {
+  display: flex;
+  flex-flow: column;
+}
+
+.construction {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.input-floor-space {
+  display: flex;
+  flex-flow: column;
+}
+
+.floor-space {
+  width: 450px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.input-tax {
+  margin-bottom: 30px;
+}
+
+.application-submit-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
