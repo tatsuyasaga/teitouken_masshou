@@ -1,59 +1,121 @@
-登記申請書を完成させるために下記の質問にご回答ください。
+<div class="application-data-header">
+  <div class="application-data-back">
+    <%= link_to "トップページに戻る", root_path %>
+  </div>
+  <div class="application-data-save">
+    <%= link_to "入力内容を保存して終了する", "#" %>
+  </div>
+</div>
+
+<div class="application-data-title">
+  <h3 id="application-data-title">登記申請書を完成させるための質問事項です。<br>
+  金融機関から受領した書類と登記簿謄本をご確認しながら下記の質問にご回答ください。<h3>
+</div>
+
+<%= render "devise/shared/error_messages", resource: resource %>
 
 <%# 質問事項 %>
-<%= form_with  url: "#", local: true do |f| %>
-  <div class="annotation">抵当権が抹消した日付</div>
-    <%= raw sprintf(
-                f.date_select(
-                  :reason_date,
-                  class:"reason-date",
-                  use_month_numbers: true,
-                  prompt:"--",
-                  start_year: 1960,
-                  end_year: Time.now.year,
-                  date_separator: "%s"),
-                "<p>年</p>","<p>月</p>") + "<p>日</p>" %>
+<body>
+  <div class="application-data-main">
+    <%= form_with  url: "#", local: true do |f| %>
+      <div class="annotation">抵当権が消滅した年月日（住宅ローンを完済した年月日）</div>
+        <div class="input-reason-date"> 
+          <%= raw sprintf(
+                  date_select_ja(
+                    f.date_select(
+                      :reason_date,
+                      class:"reason-date",
+                      use_month_numbers: true,
+                      prompt:"--",
+                      start_year: Time.now.year,
+                      end_year: 1960,
+                      date_separator: "%s")),
+                    "<p>年</p>","<p>月</p>") + "<p>日</p>" %>
+        </div>
 
-  <div class="annotation">抵当権が消滅した理由</div>
-    <%= f.text_field :reason, class:"reason", placeholder:"解除・放棄など" %>
+      <div class="annotation">抵当権が消滅した理由（解除や放棄など。※完済ではありません。）</div>
+        <%= f.text_field :reason, class:"reason" %>
 
-  <div class="annotation">設定されている抵当権の受付年月日と番号</div>
-    <%= f.text_field :receipt_number, class:"receipt-number", placeholder:"平成○年○月○日受付第○○号" %>
+      <div class="annotation">設定されている抵当権の受付年月日と番号（例　平成○○年○○月○○日受付第○○号）</div>
+        <%= f.text_field :receipt_number, :size=> "45", class:"receipt-number" %>
 
-  <div class="annotation">設定されている抵当権の共同担保目録</div>
-    <%= f.text_field :catalog_number, class:"catalog-number", placeholder:"（あ）第◯◯号" %>
+      <div class="annotation">設定されている抵当権の共同担保目録番号（例　（あ）第◯◯／○○号）</div>
+        <%= f.text_field :catalog_number, class:"catalog-number" %>
 
-  <div class="annotation">抵当権者（金融機関や保証会社）の情報</div>
-    <%= f.text_field :other_party_address, class:"other-party-address", placeholder:"住所" %> 
-    <%= f.text_field :other_party_name, class:"other-party-name", placeholder:"例）株式会社〇〇" %>  
-    <%= f.text_field :other_party_ceo, class:"other-party-ceo", placeholder:"例）代表取締役 〇〇" %>
-    <%= f.text_field :other_party_number, class:"other-party-number", placeholder:"12桁の数字" %>  
+      <div class="annotation">抵当権者（金融機関や保証会社）の情報</div>
+        <div class="other-party-info">
+          <%= f.label :other_party_address, "・本店所在地（郵便番号不要。都道府県から）" %>
+          <%= f.text_area :other_party_address, class:"other-party-address" %> 
 
-  <div class="annotation">申請書を法務局に提出する年月日</div>
-    <%= f.date_field :application_date, selected: Date.today %>
+          <%= f.label :other_party_name, "・商号（株式会社○○銀行や株式会社○○保証など）" %>
+          <%= f.text_field :other_party_name, class:"other-party-name" %>  
 
-  <div class="annotation">不動産の所在地を管轄する法務局</div>
-    <%= f.collection_select(:destination_id, Destination.all, :id, :name,{},{class:"destination"}) %>
+          <%= f.label :other_party_ceo, "・代表者（代表取締役○○や代表理事○○など）" %>
+          <%= f.text_field :other_party_ceo, class:"other-party-ceo" %>
 
-  <div class="annotation">土地の情報</div>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
-    <%= f.text_field :land_city, class:"land_city", placeholder:"市町村 例）千代田区千代田" %>
-    <%= f.text_field :land_number, class:"land_number", placeholder:"地番" %>
-    <%= f.text_field :land_branch_number, class:"land_branch_number", placeholder:"枝番" %>
-    <%= f.collection_select(:type_id, Type.all, :id, :name,{},{class:"type"}) %>
-    <%= f.text_field :land_acreage, class:"land_acreage", placeholder: "地積 例）100.01平方メートル" %>
+          <%= f.label :other_party_number, "・会社法人等番号（12桁の数字）" %>
+          <%= f.text_field :other_party_number, class:"other-party-number" %>
+        </div>  
 
-  <div class="annotation">建物の情報</div>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
-    <%= f.text_field :building_city, class:"building_city", placeholder:"市町村 例）千代田区千代田１番地１" %>
-    <%= f.text_field :building_number, class:"building_number", placeholder:"家屋番号" %>
-    <%= f.text_field :building_branch_number, class:"building_branch_number", placeholder:"枝番" %>
-    <%= f.collection_select(:use_id, Use.all, :id, :name,{},{class:"use"}) %>
-    <%= f.text_field :construction, class:"building_construction", placeholder:"構造 例）木造かわら葺２階建" %>
-    <%= f.text_area :building_floor_space, class:"building_floor_space", placeholder: "床面積 例）１階 100.01平方メートル\r２階 50.10平方メートル" %>
+      <div class="annotation">申請書を法務局に提出する年月日（ここでは空欄にして印刷した申請書に直接記入しても構いません。）</div>
+        <%= f.date_field :application_date, selected: Date.today %>
 
-  <div class="annotation">登録免許税額（自動で計算しますのでご入力いただかなくて構いません）</div>
-    <%= f.text_field :tax, class:"tax" %>
+      <div class="annotation">不動産の所在地を管轄する法務局</div>
+        <%= f.collection_select(:destination_id, Destination.all, :id, :name,{},{class:"destination"}) %>
 
-  <%= f.submit "入力完了", class:"submit-button" %>
-<% end %>
+      <div class="annotation">土地の情報（登記簿謄本通りにご入力ください）</div>
+        <div class="address">・所在（例　福岡県福岡市中央区天神一丁目）
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
+          <%= f.text_area :land_city, class:"city" %>
+        </div>
+
+        <div class="address-number">・地番と枝番（枝番がないときは空欄で構いません）
+          <%= f.text_field :land_number, class:"number", placeholder:"地番" %>
+          <%= f.text_field :land_branch_number, class:"branch-number", placeholder:"枝番" %>
+        </div>
+
+        <div class="type">・地目
+          <%= f.collection_select(:type_id, Type.all, :id, :name,{},{class:"type"}) %>
+        </div>
+
+        <div class="input-land-acreage">・地積（例　１００・０１平方メートル）
+          <%= f.text_field :acreage, class:"land-acreage" %>
+        </div>
+
+      <div class="annotation">建物の情報（登記簿藤本通りにご入力ください）</div>
+        <div class="address">・所在地（福岡県福岡市中央区天神一丁目１番地１）
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:"prefecture"}) %>
+          <%= f.text_area :building_city, class:"city" %>
+        </div>
+
+        <div class="address-number">・家屋番号と枝番（枝番がないときは空欄で構いません）
+          <%= f.text_field :building_number, class:"number", placeholder:"家屋番号" %>
+          <%= f.text_field :building_branch_number, class:"branch-number", placeholder:"枝番" %>
+        </div>
+
+        <div class="type">・種類
+          <%= f.collection_select(:use_id, Use.all, :id, :name,{},{class:"use"}) %>
+        </div>
+
+        <div class="input-construction">・構造（例　木造かわら葺２階建）
+          <%= f.text_field :construction, class:"construction" %>
+        </div>
+
+        <div class="input-floor-space">・床面積
+          <%= f.text_area :floor_space, class:"floor-space", placeholder: "例）１階 100.01平方メートル\r２階 50.10平方メートル" %>
+        </div>
+
+      <div class="annotation">登録免許税額（土地建物の合計数 ✖️ 1000）</div>
+        <div class="input-tax">
+          <%= f.text_field :tax, class:"tax" %>
+        </div>
+  </div>
+      <div class="application-submit-button">
+        <%= f.submit "入力完了", class:"submit-button" %>
+      </div>
+    <% end %>
+</body>
+
+<div class="footer">
+  <%= render "shared/footer" %>
+</div>
