@@ -37,7 +37,7 @@
 | receipt_number   | string  | null: false                    |
 | catalog_number   | string  |                                |
 | application_date | date    |                                |
-| destination_id   | integer | null: false                    |
+| destination_id   | bigint  | null: false                    |
 | tax              | integer | null: false                    |
 | user_id          | integer | null: false, foreign_key: true |
 
