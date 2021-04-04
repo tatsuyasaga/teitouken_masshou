@@ -138,3 +138,7 @@
   justify-content: center;
   margin-bottom: 30px;
 }
+
+.field_with_errors {
+  display: contents;
+}
