@@ -5,7 +5,7 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       t.references :application_datum,     foreign_key: true
       t.string :city,                      null: false
       t.integer :number,                   null: false
-      t.integer :branch_number,            null: false
+      t.integer :branch_number
       t.integer :use_id,                   null: false
       t.string :construction,              null: false
       t.string :floor_space,               null: false

@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_150218) do
     t.bigint "application_datum_id"
     t.string "city", null: false
     t.integer "number", null: false
-    t.integer "branch_number", null: false
+    t.integer "branch_number"
     t.integer "use_id", null: false
     t.string "construction", null: false
     t.string "floor_space", null: false
