@@ -37,7 +37,7 @@
 | receipt_number   | string  | null: false                    |
 | catalog_number   | string  |                                |
 | application_date | date    |                                |
-| destination_id   | bigint  | null: false                    |
+| destination_id   | integer | null: false                    |
 | tax              | integer | null: false                    |
 | user_id          | integer | null: false, foreign_key: true |
 
@@ -56,7 +56,7 @@
 | address               | string  | null: false                    |
 | name                  | string  | null: false                    |
 | ceo                   | string  | null: false                    |
-| number                | integer | null: false                    |
+| number                | bigint  | null: false                    |
 | application_datum_id  | integer | null: false, foreign_key: true |
 
 
