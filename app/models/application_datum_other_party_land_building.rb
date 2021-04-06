@@ -11,22 +11,33 @@ class ApplicationDatumOtherPartyLandBuilding
     validates :reason
     validates :receipt_number
     validates :destination_id, numericality: {other_than: 1, message: "Select"}
-    validates :tax
+    validates :tax, numericality: { only_integer: true, message: "Half-width number"}
     validates :other_party_address
     validates :other_party_name
     validates :other_party_ceo
     validates :other_party_number, numericality: { only_integer: true, less_than: 1000000000000, message: "Input only number"}
     validates :land_prefecture_id, numericality: { other_than: 1, message: "Select"}
     validates :land_city
-    validates :land_number
+    validates :land_number, numericality: { only_integer: true, message: "Half-width number"}
     validates :type_id, numericality: {other_than: 1, message: "Select"}
-    validates :acreage
+    validates :acreage 
     validates :building_prefecture_id, numericality: {other_than: 1, message: "Select"}
     validates :building_city
-    validates :building_number
+    validates :building_number, numericality: { only_integer: true, message: "Half-width number"}
     validates :use_id, numericality: {other_than: 1, message: "Select"}
     validates :construction
     validates :floor_space
+  end
+
+  validates :land_branch_number, numericality: { only_integer: true, message: "Half-width number"}, if: :land_branch_number_was_present?
+  validates :building_branch_number, numericality: { only_integer: true, message: "Half-width number"}, if: :building_branch_number_was_present?
+
+  def land_branch_number_was_present?
+    land_branch_number.present?
+  end
+
+  def building_branch_number_was_present?
+    building_branch_number.present?
   end
 
   def save
