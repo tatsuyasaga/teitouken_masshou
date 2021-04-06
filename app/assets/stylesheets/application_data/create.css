@@ -1,0 +1,49 @@
+html {
+  width: auto;
+  height: auto;
+}
+
+* {
+  font-family: "MS明朝",serif;
+  font-size: 3.7mm;
+}
+
+span {
+  margin-left: 5mm;
+}
+
+.wrapper {
+  margin: 50mm 20mm 20mm 28.5mm
+}
+
+.title{
+  font-size: 5mm;
+  margin-bottom: 10mm;
+}
+
+.application-flame {
+  display: flex;
+  margin: 1.5mm;
+}
+
+.application-column {
+  width: 45mm;
+}
+
+.application-real-estate-wrapper {
+  margin: 7mm 0mm 0mm 1.5mm;
+}
+
+.application-real-estate-flame {
+  display: flex;
+}
+
+.application-real-estate-column {
+  width: 20mm;
+  text-align-last: justify;
+  margin:0mm 5mm;
+}
+
+.real-estate-wapper2 {
+  margin-bottom: 5mm;
+}
