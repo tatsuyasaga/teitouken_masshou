@@ -1,4 +1,6 @@
 class ApplicationDataController < ApplicationController
+  require "wareki"
+
   def index
   end
 
