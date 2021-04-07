@@ -1,19 +1,11 @@
-html {
-  width: auto;
-  height: auto;
-}
-
-* {
+.create-wrapper {
   font-family: "MS明朝",serif;
   font-size: 3.7mm;
+  margin: 50mm 20mm 20mm 28.5mm
 }
 
 span {
   margin-left: 5mm;
-}
-
-.wrapper {
-  margin: 50mm 20mm 20mm 28.5mm
 }
 
 .title{
@@ -27,7 +19,7 @@ span {
 }
 
 .application-column {
-  width: 45mm;
+  width: 28mm;
 }
 
 .application-real-estate-wrapper {

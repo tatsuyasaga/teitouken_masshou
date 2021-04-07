@@ -1,5 +1,7 @@
-<div class=wrapper>
-  <h3 class="title">登記申請書</h3>
+<div class="create-wrapper">
+  <div class="title">
+    <h3 >登記申請書</h3>
+  </div>
 
   <div class="application-flame">
     <div class="application-column">
@@ -15,7 +17,7 @@
       原因
     </div>
     <div class="application-content">
-      <%= @application_datum_other_party_land_building.reason_date %>
+      <%= @reason_date.strftime("%Jf") %>
       <span><%= @application_datum_other_party_land_building.reason %></span>
     </div>
   </div>
@@ -25,9 +27,9 @@
       権利者
     </div>
     <div class="application-content">
-      住所<span><%= @applicant.address %></span>
+      <%= @applicant.address %>
       <div class="application-content">
-        氏名<span><%= @applicant.name %></span>
+        <%= @applicant.name %>
       </div>
     </div>
   </div>
@@ -37,12 +39,12 @@
       義務者
     </div>
     <div class="application-content">
-      本店<span><%= @application_datum_other_party_land_building.other_party_address %></span>
+      <%= @application_datum_other_party_land_building.other_party_address %>
       <div class="application-content">
-        商号<span><%= @application_datum_other_party_land_building.other_party_name %></span>
+        <%= @application_datum_other_party_land_building.other_party_name %>
       </div>
       <div class="application-content">
-        代表取締役<span><%= @application_datum_other_party_land_building.other_party_ceo %></span>
+        <%= @application_datum_other_party_land_building.other_party_ceo %>
       </div>
       <div class="application-content">
         会社法人等番号<span><%= @application_datum_other_party_land_building.other_party_number%></span>
@@ -60,24 +62,24 @@
   </div>
 
   <div class="application-flame">
-    登記完了証の受取方法 郵送による交付を希望する
+      登記完了証の交付方法<span>郵送による交付を希望する</span>
   </div>
 
   <div class="application-flame">
     <div class="application-content">
-      <%= @application_datum_other_party_land_building.application_date %><span>申請</span>
+      <%= @application_date.strftime("%Jf") %><span>申請</span>
       <span><%= @destination.name%></span><span>御中</span>
     </div>
   </div>
 
   <div class="application-flame">
     <div class="application-column">
-      申請人兼義務者代理人
+      申請人兼<br>義務者代理人
     </div>
     <div class="application-content">
-      住所<span><%= @applicant.address %></span>
+      <%= @applicant.address %>
       <div class="application-content">
-        氏名<span><%= @applicant.name %></span>
+        <%= @applicant.name %>
       </div>
     </div>
   </div>
@@ -87,7 +89,7 @@
       登録免許税
     </div>
     <div class="application-content">
-      <%= @application_datum_other_party_land_building.tax %>円
+      金<%= @application_datum_other_party_land_building.tax %>円
     </div>
   </div>
 
@@ -122,7 +124,7 @@
           <%= @type.name%>
         </div>
       </div>
-      
+
       <div class="application-real-estate-flame">
         <div class="application-real-estate-column">
           地積
