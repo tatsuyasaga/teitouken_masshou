@@ -8,6 +8,7 @@ class CreateApplicationData < ActiveRecord::Migration[6.0]
       t.date :application_date
       t.integer :destination_id, null: false
       t.integer :tax,            null: false
+      t.references :user,        foreign_key: true
       t.timestamps
     end
   end

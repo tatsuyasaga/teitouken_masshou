@@ -1,0 +1,186 @@
+<div class="create-wrapper">
+  <div class="title">
+    <h3 >登記申請書</h3>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      登記の目的
+    </div>
+    <div class="application-content">
+      抵当権抹消
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      原因
+    </div>
+    <div class="application-content">
+      <%= @reason_date.strftime("%Jf") %>
+      <span><%= @application_datum_other_party_land_building.reason %></span>
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      権利者
+    </div>
+    <div class="application-content">
+      <%= @applicant.address %>
+      <div class="application-content">
+        <%= @applicant.name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      義務者
+    </div>
+    <div class="application-content">
+      <%= @application_datum_other_party_land_building.other_party_address %>
+      <div class="application-content">
+        <%= @application_datum_other_party_land_building.other_party_name %>
+      </div>
+      <div class="application-content">
+        <%= @application_datum_other_party_land_building.other_party_ceo %>
+      </div>
+      <div class="application-content">
+        会社法人等番号<span><%= @application_datum_other_party_land_building.other_party_number%></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      添付書類
+    </div>
+    <div class="application-content">
+      登記識別情報通知<span>登記原因証明情報</span><span>代理権限証明情報</span><span>会社法人等番号</span>
+    </div>
+  </div>
+
+  <div class="application-flame">
+      登記完了証の交付方法<span>郵送による交付を希望する</span>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-content">
+      <%= @application_date.strftime("%Jf") %><span>申請</span>
+      <span><%= @destination.name%></span><span>御中</span>
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      申請人兼<br>義務者代理人
+    </div>
+    <div class="application-content">
+      <%= @applicant.address %>
+      <div class="application-content">
+        <%= @applicant.name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="application-flame">
+    <div class="application-column">
+      登録免許税
+    </div>
+    <div class="application-content">
+      金<%= @application_datum_other_party_land_building.tax %>円
+    </div>
+  </div>
+
+  <div class="application-real-estate-wrapper">
+    不動産の表示
+
+    <div class="real-estate-wapper2">
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+        所在
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.land_city %>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          地番
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.land_number%>番
+          <%= @application_datum_other_party_land_building.land_branch_number%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          地目
+        </div>
+        <div class="application-real-estate-content">
+          <%= @type.name%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          地積
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.acreage %>
+        </div>
+      </div>
+    </div>
+
+    <div class="real-estate-wapper2">
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          所在
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.building_city%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          家屋番号
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.building_number%>番
+          <%= @application_datum_other_party_land_building.building_branch_number%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column">
+          種類
+        </div>
+        <div class="application-real-estate-content">
+          <%= @use.name%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column"> 
+          構造
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.construction%>
+        </div>
+      </div>
+
+      <div class="application-real-estate-flame">
+        <div class="application-real-estate-column"> 
+          床面積
+        </div>
+        <div class="application-real-estate-content">
+          <%= @application_datum_other_party_land_building.floor_space%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
