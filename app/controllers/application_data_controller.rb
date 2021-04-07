@@ -1,5 +1,6 @@
 class ApplicationDataController < ApplicationController
   require "wareki"
+  require "date"
 
   def index
   end
@@ -17,6 +18,8 @@ class ApplicationDataController < ApplicationController
     @destination = Destination.find(@application_datum_other_party_land_building.destination_id)
     @type = Type.find(@application_datum_other_party_land_building.type_id)
     @use = Use.find(@application_datum_other_party_land_building.use_id)
+    wareki_reason_date
+    wareki_application_date
     if @application_datum_other_party_land_building.valid?
       @application_datum_other_party_land_building.save
     else
@@ -32,4 +35,17 @@ class ApplicationDataController < ApplicationController
                    :building_city, :building_number, :building_branch_number, :use_id, :construction, :floor_space, :tax).merge(user_id: current_user.id)
   end
 
+  def wareki_reason_date
+    reason_date = @application_datum_other_party_land_building.reason_date
+    year = reason_date[1]
+    month = reason_date[2]
+    day = reason_date[3]
+    reason_date = "#{year}-#{month}-#{day}"
+    @reason_date = Date.parse(reason_date)
+  end
+
+  def wareki_application_date
+    application_date = @application_datum_other_party_land_building.application_date
+    @application_date = Date.parse(application_date)
+  end
 end
