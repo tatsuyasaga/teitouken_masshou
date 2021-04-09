@@ -1,3 +1,9 @@
+@media print {
+  .back-top-page, .back-input-page {
+    display: none;
+  }
+}
+
 .create-wrapper {
   font-family: "MS明朝",serif;
   font-size: 3.7mm;
