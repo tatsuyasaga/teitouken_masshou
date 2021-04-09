@@ -8,6 +8,14 @@ span {
   margin-left: 5mm;
 }
 
+.application-data-top-link{
+  display: flex;
+}
+
+.back-input-page{
+  margin-left: 5mm;
+}
+
 .title{
   font-size: 5mm;
   margin-bottom: 10mm;
