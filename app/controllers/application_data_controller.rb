@@ -1,6 +1,7 @@
 class ApplicationDataController < ApplicationController
   require "wareki"
   require "date"
+  before_action :authenticate_user!, except: [:index]
 
   def index
   end
