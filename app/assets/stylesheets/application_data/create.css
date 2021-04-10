@@ -1,5 +1,5 @@
 @media print {
-  .back-top-page, .back-input-page {
+  .back-top-page, .back-input-page, #print-button {
     display: none;
   }
 }
@@ -7,7 +7,7 @@
 .create-wrapper {
   font-family: "MS明朝",serif;
   font-size: 3.7mm;
-  margin: 50mm 20mm 20mm 28.5mm
+  margin: 40mm 20mm 20mm 28.5mm
 }
 
 span {
@@ -19,12 +19,12 @@ span {
 }
 
 .back-input-page{
-  margin-left: 5mm;
+  margin: 0mm 10mm;
 }
 
-.title{
+.apprication-data-title{
   font-size: 5mm;
-  margin-bottom: 10mm;
+  margin: 10mm 0mm;
 }
 
 .application-flame {
