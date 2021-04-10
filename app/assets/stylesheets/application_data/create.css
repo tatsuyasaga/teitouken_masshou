@@ -1,16 +1,40 @@
+@media print {
+  .back-top-page, .back-input-page, #print-button {
+    display: none;
+  }
+}
+
 .create-wrapper {
   font-family: "MS明朝",serif;
   font-size: 3.7mm;
-  margin: 50mm 20mm 20mm 28.5mm
+  margin: 40mm 20mm 20mm 28.5mm
 }
 
 span {
   margin-left: 5mm;
 }
 
-.title{
+.application-data-top-link{
+  display: flex;
+}
+
+.back-input-page{
+  margin: 0mm 10mm;
+}
+
+#print-button {
+  border: 2px solid #BBBBBB;
+  cursor: pointer;
+  transition: .4s;
+}
+
+#print-button:hover {
+  background-color:#BBFFFF;
+}
+
+.apprication-data-title{
   font-size: 5mm;
-  margin-bottom: 10mm;
+  margin: 10mm 0mm;
 }
 
 .application-flame {
