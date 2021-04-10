@@ -22,6 +22,10 @@ span {
   margin: 0mm 10mm;
 }
 
+#print-button {
+  border: 2px solid #BBBBBB;
+}
+
 .apprication-data-title{
   font-size: 5mm;
   margin: 10mm 0mm;
