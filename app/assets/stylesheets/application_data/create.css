@@ -24,6 +24,12 @@ span {
 
 #print-button {
   border: 2px solid #BBBBBB;
+  cursor: pointer;
+  transition: .4s;
+}
+
+#print-button:hover {
+  background-color:#BBFFFF;
 }
 
 .apprication-data-title{
