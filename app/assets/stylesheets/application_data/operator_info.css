@@ -1,0 +1,32 @@
+.operator-info-body {
+  height: 60vh;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.operator-info-main {
+  height: 100%;
+  width: 650px;
+}
+
+.operator-info-title {
+  margin: 10px 0px;
+}
+
+.operator-info-table {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.operator-info-item, .operator-info-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.operator-info-item {
+  width: 150px;
+}

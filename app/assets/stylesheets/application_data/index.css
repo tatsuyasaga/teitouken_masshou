@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.head {
+.header {
   width: 100vw;
   height: 25vh;
   background-color: #33CCFF;
@@ -58,4 +58,5 @@ footer {
   text-align: center;
   border-top: solid 1px black;
   background-color: #FFFFCC;
+  bottom: 0px;
 }
