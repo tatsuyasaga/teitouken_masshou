@@ -1,7 +1,7 @@
 class ApplicationDataController < ApplicationController
   require "wareki"
   require "date"
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :operator_info]
 
   def index
   end
@@ -26,6 +26,9 @@ class ApplicationDataController < ApplicationController
     else
       render :new
     end
+  end
+
+  def operator_info
   end
 
   private
