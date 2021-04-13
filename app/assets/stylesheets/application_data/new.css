@@ -19,19 +19,39 @@
 
 #application-data-title {
   border: 1px solid black;
+  border-radius: 5px;
   text-align: center;
+  padding: 6px;
+  background-color: #CCFFCC;
+  color: #000000;
+
 }
 
 .application-data-main {
-  margin: 0px 0px 30px 100px;
+  margin: 0px 0px 30px 200px;
 }
 
-.input-reason-date {
-  display: flex;
+.input-item {
+  margin: 0px 0px 20px 0px;
+  width: 650px;
+  border-radius: 10px;
 }
 
-.annotation {
-  margin-top: 15px;
+.mortgage-info {
+  padding: 10px 10px 10px 30px;
+  background-color: #E6FFE9;
+}
+
+.input-form {
+  margin: 10px 0px;
+}
+
+.reason-date {
+  height: 24px;
+}
+
+.input-short {
+  width: 80px;
 }
 
 .other-party-info {
