@@ -1,25 +1,35 @@
 header {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  position: relative;
+  height: 100px;
   border-bottom: solid 1px black;
 }
 
-.title {
-  text-align: center;
-}
-
-.right {
-}
-
-.lists-right {
-  position: absolute;
+.header-wrapper {
   display: flex;
-  top: 15px;
-  right: 10px;
+  justify-content: center;
 }
 
-li {
-  margin-right: 20px;
+.title-area {
+  height: 100px;
+}
+
+.top-right-area {
+  position: absolute;
+  height: 100px;
+  right: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lists-top-right {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+
+.header-list {
+  list-style: none;
+  text-decoration: none;
 }
