@@ -1,11 +1,4 @@
 module ApplicationHelper
-  def address_placeholder
-    <<-"EOS".strip_heredoc
-      福岡県福岡市中央区天神一丁目１番１号
-      佐賀ビル１００階
-    EOS
-  end
-
   def date_select_ja(src_html)
     dst_html = src_html.gsub(/>\d{4}</) do |m|
       year = m.match(/>(\d{4})</)[1].to_i
