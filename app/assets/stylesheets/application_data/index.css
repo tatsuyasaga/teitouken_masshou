@@ -25,7 +25,25 @@
   height: calc(100vh -100px -100px);
 }
 
-.foot {
+.right-side-head {
+  text-align: center;
+}
+
+.select-menu {
+  padding-top: 10px;
+  margin: 0px 100px;
+
+}
+
+.top-page-description {
+  margin-top: 10px;
+}
+
+.right-side-body {
+  padding: 100px 0px;
+}
+
+.right-side-foot {
   text-align: center;
   bottom: 0px;
 }
