@@ -32,7 +32,7 @@
     </div>
     <div class="application-content">
       <%= @reason_date.strftime("%Jf") %>
-      <span><%= @application_datum_other_party_land_building.reason %></span>
+      <span class="span-create-page"><%= @application_datum_other_party_land_building.reason %></span>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
         <%= @application_datum_other_party_land_building.other_party_ceo %>
       </div>
       <div class="application-content">
-        会社法人等番号<span><%= @application_datum_other_party_land_building.other_party_number%></span>
+        会社法人等番号<span class="span-create-page"><%= @application_datum_other_party_land_building.other_party_number%></span>
       </div>
     </div>
   </div>
@@ -71,18 +71,18 @@
       添付書類
     </div>
     <div class="application-content">
-      登記識別情報通知<span>登記原因証明情報</span><span>代理権限証明情報</span><span>会社法人等番号</span>
+      登記識別情報通知<span class="span-create-page">登記原因証明情報</span><span class="span-create-page">代理権限証明情報</span><span class="span-create-page">会社法人等番号</span>
     </div>
   </div>
 
   <div class="application-flame">
-      登記完了証の交付方法<span>郵送による交付を希望する</span>
+      登記完了証の交付方法<span class="span-create-page">郵送による交付を希望する</span>
   </div>
 
   <div class="application-flame">
     <div class="application-content">
-      <%= @application_date.strftime("%Jf") %><span>申請</span>
-      <span><%= @destination.name%></span><span>御中</span>
+      <%= @application_date.strftime("%Jf") %><span class="span-create-page">申請</span>
+      <span class="span-create-page"><%= @destination.name%></span><span class="span-create-page">御中</span>
     </div>
   </div>
 
