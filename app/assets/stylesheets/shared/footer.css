@@ -1,9 +1,3 @@
-footer {
-  width: 100vw;
-  text-align: center;
-  border-top: solid 1px black;
-}
-
 .contact-us {
   display: flex;
   justify-content: center;
@@ -11,4 +5,12 @@ footer {
 
 ul {
   list-style: none;
+}
+
+.footer-title {
+  margin-top: 15px;
+}
+
+.footer-list {
+  margin: 5px 10px;
 }
