@@ -1,16 +1,8 @@
 .contact-us {
-  display: flex;
+  display: inline-block;
   justify-content: center;
-}
-
-ul {
-  list-style: none;
 }
 
 .footer-title {
   margin-top: 15px;
-}
-
-.footer-list {
-  margin: 5px 10px;
 }
