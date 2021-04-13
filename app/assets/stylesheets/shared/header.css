@@ -4,13 +4,13 @@
 }
 
 .title-area {
-  height: 100px;
+  height: 25vh;
   text-align: center;
 }
 
 .top-right-area {
   position: absolute;
-  height: 100px;
+  height: 25vh;
   right: 50px;
   width: 200px;
   display: flex;
