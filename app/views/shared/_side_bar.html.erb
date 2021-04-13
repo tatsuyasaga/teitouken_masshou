@@ -1,8 +1,22 @@
-<div class="side_bar">
-  <ul>
-    <li class="menu" >手続一覧</li>
-    <li><%= link_to "抵当権抹消登記", new_application_datum_path %></li>
-    <li><%= link_to "住所変更登記", "#" %></li>
-    <li><%= link_to "相続による所有権移転登記", "#" %></li>
-  </ul>
+<div class="side-bar-wrapper">
+  <div class="side-bar">
+    <ul id="side-bar-lists">
+      <li class="side-bar-list side-bar-list-title" >お手伝いできるお手続一覧</li>
+      <li class="side-bar-list delete-mortgage">
+        <%= link_to "抵当権抹消登記", new_application_datum_path, class:"side-bar-list-link" %>
+        <div class="delete-mortgage-tip">
+          <span>住宅ローンを完済したときに<br>ご自宅に登記された金融機関の担保の<br>記録を抹消するための手続きです。<span>
+        </div>
+      </li>
+      <li class="side-bar-list change-address">
+        <%= link_to "住所変更登記", "#", class:"side-bar-list-link" %></li>
+        <div class="change-address-tip">
+        </div>
+      <li class="side-bar-list inheritance">
+        <%= link_to "相続による所有権移転登記", "#", class:"side-bar-list-link" %>
+        <div class="inheritance-tip">
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

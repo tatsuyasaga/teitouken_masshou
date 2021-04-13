@@ -1,25 +1,30 @@
-header {
-  width: 100vw;
+.header-wrapper {
   display: flex;
   justify-content: center;
-  position: relative;
-  border-bottom: solid 1px black;
 }
 
-.title {
+.title-area {
+  height: 100px;
   text-align: center;
 }
 
-.right {
-}
-
-.lists-right {
+.top-right-area {
   position: absolute;
+  height: 100px;
+  right: 50px;
+  width: 200px;
   display: flex;
-  top: 15px;
-  right: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-li {
-  margin-right: 20px;
+.lists-top-right {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+
+.header-list {
+  list-style: none;
+  text-decoration: none;
 }
