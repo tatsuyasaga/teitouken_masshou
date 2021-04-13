@@ -5,7 +5,7 @@
 
 .head {
   width: 100vw;
-  height: 100px;
+  height: 25vh;
   background-color: #33CCFF;
   color: white;
   font-family: "Marion", sans-serif;
@@ -13,21 +13,21 @@
 }
 
 .center {
-  height: calc(100vh -100px -100px);
+  height: 60vh;
   width: 100%;
   display: flex;
 }
 
 .left-side {
   width: 30vw;
-  height: calc(100vh -100px -100px);
+  height: 60vh;
   border-right: solid 1px black;
   background-color: #EEFFFF;
 }
 
 .right-side {
   width: 70vw;
-  height: calc(100vh -100px -100px);
+  height: 60vh;
 }
 
 .right-side-head {
@@ -44,7 +44,7 @@
 }
 
 .right-side-body {
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 
 .right-side-foot {
@@ -54,7 +54,7 @@
 
 footer {
   width: 100vw;
-  height: 100px;
+  height: 15vh;
   text-align: center;
   border-top: solid 1px black;
   background-color: #FFFFCC;
