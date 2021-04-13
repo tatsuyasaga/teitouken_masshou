@@ -18,9 +18,12 @@
   <%# 質問事項 %>
   <div class="application-data-main">
     <%= form_with model: @application_datum_other_party_land_building, url: application_data_path, local: true do |f| %>
+
+      <%# 抵当権情報 %>
       <div class="input-item mortgage-info">
+        <%= f.label :mortgage_info, "抵当権の情報" %>
         <div class="input-form">
-          <%= f.label :reason_date, "抵当権が消滅した年月日（住宅ローンの最終支払日）" %><br>
+          <%= f.label :reason_date, "・抵当権が消滅した年月日（住宅ローンの最終支払日）" %><br>
             <%= raw sprintf(
                     date_select_ja(
                       f.date_select(
@@ -34,38 +37,53 @@
                       "<span>年</span>","<span>月</span>") + "<span>日</span>" %>
         </div>
         <div class=input-form>
-          <%= f.label :reason, "抵当権が消滅した理由（解除や放棄など。※完済ではありません。）" %><br>
-          <%= f.text_field :reason, class:"input-short", placeholder:"例）解除" %>
+          <%= f.label :reason, "・抵当権が消滅した理由（解除や放棄など。※完済ではありません。）" %><br>
+          <%= f.text_field :reason, class:"reason", placeholder:"例）解除" %>
         </div>
         <div class=input-form>
-          <%= f.label :receipt_number, "消滅した抵当権の受付年月日と番号（例　平成○○年○○月○○日受付第○○号）" %><br>
-          <%= f.text_field :receipt_number, :size=> "45", class:"receipt-number" %>
+          <%= f.label :receipt_number, "・消滅した抵当権の受付年月日と番号（例　平成○○年○○月○○日受付第○○号）" %><br>
+          <%= f.text_field :receipt_number, :size=> "45", class:"receipt-number", placeholder:"例）平成元年１月１１日受付第１１１１号" %>
         </div>
         <div class=input-form>
-          <%= f.label :catalog_number, "消滅した抵当権の共同担保目録番号（例　（あ）第◯◯／○○号）" %><br>
-          <%= f.text_field :catalog_number, class:"catalog-number" %>
+          <%= f.label :catalog_number, "・消滅した抵当権の共同担保目録番号（例　（あ）第◯◯／○○号）" %><br>
+          <%= f.text_field :catalog_number, :size=> "45", class:"catalog-number", placeholder:"例）（あ）第１００／１２３号" %>
         </div>
       </div>
+      <%# /抵当権情報 %>
 
-      <div class="input-item">
+      <%# 抵当権者情報 %>
+      <div class="input-item other-party-info">
         <%= f.label :other_party_info, "抵当権者（金融機関や保証会社）の情報" %>
-          <div class="other-party-info">
-            <%= f.label :other_party_address, "・本店所在地（郵便番号不要。都道府県から）" %>
-            <%= f.text_area :other_party_address, class:"other-party-address" %> 
-            <%= f.label :other_party_name, "・商号（株式会社○○銀行や株式会社○○保証など）" %>
-            <%= f.text_field :other_party_name, class:"other-party-name" %>  
-            <%= f.label :other_party_ceo, "・代表者（代表取締役○○や代表理事○○など）" %>
-            <%= f.text_field :other_party_ceo, class:"other-party-ceo" %>
-            <%= f.label :other_party_number, "・会社法人等番号（12桁の数字）" %>
-            <%= f.text_field :other_party_number, class:"other-party-number" %>
-          </div>
+        <div class="input-form">
+          <%= f.label :other_party_address, "・本店所在地（郵便番号不要。都道府県から）" %><br>
+          <%= f.text_area :other_party_address, class:"other-party-address", placeholder: address_placeholder %> 
+        </div>
+        <div class="input-form">
+          <%= f.label :other_party_name, "・商号（株式会社○○銀行や株式会社○○保証など）" %><br>
+          <%= f.text_field :other_party_name, class:"other-party-name", placeholder:"例）株式会社住宅ローン銀行" %>  
+        </div>
+        <div class="input-form">
+          <%= f.label :other_party_ceo, "・代表者（代表取締役○○や代表理事○○など）" %><br>
+          <%= f.text_field :other_party_ceo, class:"other-party-ceo",placeholder:"例）代表取締役 住宅太郎" %>
+        </div>
+        <div class="input-form">
+          <%= f.label :other_party_number, "・会社法人等番号（12桁の数字）" %><br>
+          <%= f.text_field :other_party_number, class:"other-party-number",placeholder:"半角数字でご入力ださい" %>
+        </div>
       </div>
+      <%# /抵当権者情報 %>
 
-      <div class="input-item">
-        <%= f.label :application_date, "申請書を法務局に提出する年月日<br>（ここでは空欄にして印刷した申請書に直接記入しても構いません。）" %>
+      <div class="input-item destination-info">
+        <div class="input-form">
+          <%= f.label :application_date, "申請書を法務局に提出する年月日
+          （未定の場合は空欄のまま入力を完了させて、印刷した申請書に直接記入することもできます。）" %><br>
           <%= f.date_field :application_date, selected: Date.today %>
-        <%= f.label :destination_id, "不動産の所在地を管轄する法務局" %>
+        </div>
+        <div class="input-form">
+          <%= f.label :destination_id, "不動産の所在地を管轄する法務局
+          （「不動産の市町村名 法務局」で検索すると見つかります）" %><br>
           <%= f.collection_select(:destination_id, Destination.all, :id, :name,{},{class:"destination"}) %>
+        </div>
       </div>
 
       <div class="input-info">
