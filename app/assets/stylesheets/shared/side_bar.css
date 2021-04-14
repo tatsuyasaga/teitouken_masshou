@@ -6,6 +6,7 @@
 
 .side-bar-list {
   position: relative;
+  list-style: none;
 }
 
 .delete-mortgage-tip {
