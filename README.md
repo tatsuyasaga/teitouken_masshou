@@ -54,7 +54,7 @@ https://teitouken-masshou.herokuapp.com/
 
 ## ユーザー新規登録
 
-[![Image from Gyazo](https://i.gyazo.com/6e20d6e10a231e3c09e03d012fedf67c.gif)](https://gyazo.com/6e20d6e10a231e3c09e03d012fedf67c)
+[![Image from Gyazo](https://i.gyazo.com/f1266f6a397d5ff30b71ec34ce8fc08b.gif)](https://gyazo.com/f1266f6a397d5ff30b71ec34ce8fc08b)
 ここで入力された内容は登記申請書に反映されるように設定してます。
 
 ## 登記申請内容Q&Aページ
