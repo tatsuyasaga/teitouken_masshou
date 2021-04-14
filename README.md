@@ -8,8 +8,11 @@
 本アプリでは、一問一答形式で抵当権抹消登記手続きで使用する登記申請書を  
 完成させることができます。
 
+- 要件定義書
+    - https://docs.google.com/spreadsheets/d/12FluphAjfRMJKf8RY0UH2ljYpTkeHikVzJkDZ0GIRPA/edit#gid=297255682  
+
 - Githubリポジトリ
-    - https://github.com/tatsuyasaga/teitouken_masshou
+    - https://github.com/tatsuyasaga/teitouken_masshou  
 
 
 # 本番環境
