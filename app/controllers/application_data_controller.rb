@@ -19,9 +19,9 @@ class ApplicationDataController < ApplicationController
     @destination = Destination.find(@application_datum_other_party_land_building.destination_id)
     @type = Type.find(@application_datum_other_party_land_building.type_id)
     @use = Use.find(@application_datum_other_party_land_building.use_id)
-    wareki_reason_date
-    wareki_application_date
     if @application_datum_other_party_land_building.valid?
+      wareki_reason_date
+      wareki_application_date
       @application_datum_other_party_land_building.save
     else
       render :new
@@ -49,7 +49,9 @@ class ApplicationDataController < ApplicationController
   end
 
   def wareki_application_date
-    application_date = @application_datum_other_party_land_building.application_date
-    @application_date = Date.parse(application_date)
+    if @application_datum_other_party_land_building.application_date.present?
+      application_date = @application_datum_other_party_land_building.application_date
+      @application_date = Date.parse(application_date)
+    end
   end
 end
