@@ -38,14 +38,40 @@
         </div>
         <div class=input-form>
           <%= f.label :reason, "・抵当権が消滅した理由（解除や放棄など。※完済ではありません。）" %><br>
-          <%= f.radio_button :reason, :cancellation %>
-          <%= f.label :reason, "解除", {value: :cancellation, style: "display: inline-block;"} %>
+
+          <span class="reason_select">
+           <%= f.radio_button :reason, :"解除" %>
+           <%= f.label :reason, "解除", {style: "display: inline-block;"} %>
+          </span>
+
+          <span class="reason_select">
+           <%= f.radio_button :reason, :"放棄" %>
+           <%= f.label :reason, "放棄", {style: "display: inline-block;"} %>
+          </span>
+
+          <span class="reason_select">
+           <%= f.radio_button :reason, :"弁済" %>
+           <%= f.label :reason, "弁済", {style: "display: inline-block;"} %>
+          </span>
+
+          <span class="reason_select">
+           <%= f.radio_button :reason, :"解約" %>
+           <%= f.label :reason, "解約", {style: "display: inline-block;"} %>
+          </span>
+
+          <span class="reason_select">
+           <%= f.radio_button :reason, :"主債務消滅" %>
+           <%= f.label :reason, "主債務消滅", {style: "display: inline-block;"} %>
+          </span>
+
           <%#= f.text_field :reason, class:"reason", placeholder:"例）解除" %>
         </div>
+
         <div class=input-form>
           <%= f.label :receipt_number, "・消滅した抵当権の受付年月日と番号（例　平成○○年○○月○○日受付第○○号）" %><br>
           <%= f.text_field :receipt_number, :size=> "45", class:"receipt-number", placeholder:"例）平成元年１月１１日受付第１１１１号" %>
         </div>
+
         <div class=input-form>
           <%= f.label :catalog_number, "・消滅した抵当権の共同担保目録番号（例　（あ）第◯◯／○○号）" %><br>
           <%= f.text_field :catalog_number, :size=> "45", class:"catalog-number", placeholder:"例）（あ）第１００／１２３号" %>
