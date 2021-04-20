@@ -38,7 +38,9 @@
         </div>
         <div class=input-form>
           <%= f.label :reason, "・抵当権が消滅した理由（解除や放棄など。※完済ではありません。）" %><br>
-          <%= f.text_field :reason, class:"reason", placeholder:"例）解除" %>
+          <%= f.radio_button :reason, :cancellation %>
+          <%= f.label :reason, "解除", {value: :cancellation, style: "display: inline-block;"} %>
+          <%#= f.text_field :reason, class:"reason", placeholder:"例）解除" %>
         </div>
         <div class=input-form>
           <%= f.label :receipt_number, "・消滅した抵当権の受付年月日と番号（例　平成○○年○○月○○日受付第○○号）" %><br>
