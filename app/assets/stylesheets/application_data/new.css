@@ -54,6 +54,10 @@
   width: 80px;
 }
 
+.reason_select {
+  margin-right: 5mm;
+}
+
 .other-party-info {
   padding: 10px 10px 10px 30px;
   background-color: #F3FFD8;
