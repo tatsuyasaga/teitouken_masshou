@@ -66,9 +66,9 @@
           </span>
 
           <div class="reason_other">
-            <%= f.radio_button :reason, :"" %>
+            <%= f.radio_button :reason, :"", id: "reason-other-button", checked: false %>
             <%= f.label :reason, "その他", {style: "display: inline-block;"} %>
-            <%= f.text_field  class:"reason-input" %>
+            <%= f.text_field  :unknown, id: "reason-input" %>
           </div>
         </div>
 
