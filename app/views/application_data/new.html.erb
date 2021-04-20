@@ -36,35 +36,40 @@
                         date_separator: "%s")),
                       "<span>年</span>","<span>月</span>") + "<span>日</span>" %>
         </div>
+
         <div class=input-form>
           <%= f.label :reason, "・抵当権が消滅した理由（解除や放棄など。※完済ではありません。）" %><br>
 
           <span class="reason_select">
-           <%= f.radio_button :reason, :"解除" %>
-           <%= f.label :reason, "解除", {style: "display: inline-block;"} %>
+            <%= f.radio_button :reason, :"解除" %>
+            <%= f.label :reason, "解除", {style: "display: inline-block;"} %>
           </span>
 
           <span class="reason_select">
-           <%= f.radio_button :reason, :"放棄" %>
-           <%= f.label :reason, "放棄", {style: "display: inline-block;"} %>
+            <%= f.radio_button :reason, :"放棄" %>
+            <%= f.label :reason, "放棄", {style: "display: inline-block;"} %>
           </span>
 
           <span class="reason_select">
-           <%= f.radio_button :reason, :"弁済" %>
-           <%= f.label :reason, "弁済", {style: "display: inline-block;"} %>
+            <%= f.radio_button :reason, :"弁済" %>
+            <%= f.label :reason, "弁済", {style: "display: inline-block;"} %>
           </span>
 
           <span class="reason_select">
-           <%= f.radio_button :reason, :"解約" %>
-           <%= f.label :reason, "解約", {style: "display: inline-block;"} %>
+            <%= f.radio_button :reason, :"解約" %>
+            <%= f.label :reason, "解約", {style: "display: inline-block;"} %>
           </span>
 
           <span class="reason_select">
-           <%= f.radio_button :reason, :"主債務消滅" %>
-           <%= f.label :reason, "主債務消滅", {style: "display: inline-block;"} %>
+            <%= f.radio_button :reason, :"主債務消滅" %>
+            <%= f.label :reason, "主債務消滅", {style: "display: inline-block;"} %>
           </span>
 
-          <%#= f.text_field :reason, class:"reason", placeholder:"例）解除" %>
+          <div class="reason_other">
+            <%= f.radio_button :reason, :"" %>
+            <%= f.label :reason, "その他", {style: "display: inline-block;"} %>
+            <%= f.text_field  class:"reason-input" %>
+          </div>
         </div>
 
         <div class=input-form>
