@@ -14,11 +14,10 @@ class ApplicationDataController < ApplicationController
   end
 
   def create
-    binding.pry
     @application_datum_other_party_land_building = ApplicationDatumOtherPartyLandBuilding.new(application_datum_params)
     @applicant = User.find(@application_datum_other_party_land_building.user_id)
     @destination = Destination.find(@application_datum_other_party_land_building.destination_id)
-    @branch_destination_id = BranchDestination.find(@application_datum_other_party_land_building.branch_destination_id)
+    @branch_destination = BranchDestination.find(@application_datum_other_party_land_building.branch_destination_id)
     @type = Type.find(@application_datum_other_party_land_building.type_id)
     @use = Use.find(@application_datum_other_party_land_building.use_id)
     if @application_datum_other_party_land_building.valid?
