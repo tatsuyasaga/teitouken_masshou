@@ -1,12 +1,16 @@
 function selectBranchDestination(){
   const destination = document.getElementById("destination");
   destination.onchange = autoSelectBranchDestination;
-  const branchDestination = document.getElementById("branch-destination");
-
+  
   function autoSelectBranchDestination(){
+    const branchDestination = document.getElementById("branch-destination");
     const selectedDestination = destination.value;
     const allBranchDestination = branchDestination.options;
     const arrayBranchDestination = Array.prototype.slice.call(allBranchDestination);
+    
+    arrayBranchDestination.forEach(function(id){
+      id.style.display = "";
+    })
 
     switch(selectedDestination){
       case("2"):
@@ -312,9 +316,5 @@ function selectBranchDestination(){
     };
   };
 };
-
-
-
-
 
 addEventListener("load", selectBranchDestination)
