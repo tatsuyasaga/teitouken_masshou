@@ -86,7 +86,13 @@
       <% else %>
         <span>令和</span><span class="span-create-page">年</span><span class="span-create-page">月</span><span class="span-create-page">日</span><span class="span-create-page">申請</span>
       <% end %>
-      <span class="span-create-page"><%= @destination.name%></span><span class="span-create-page">御中</span>
+      <span class="span-create-page"><%= @destination.name %></span>
+      <% if @branch_destination.name != "本局" %>
+        <span class="span-create-page">
+          <%=@branch_destination.name %>
+        </span>
+      <% end %>
+      <span class="span-create-page">御中</span>
     </div>
   </div>
 

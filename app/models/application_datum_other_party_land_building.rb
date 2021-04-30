@@ -3,14 +3,15 @@ class ApplicationDatumOtherPartyLandBuilding
   include ActiveRecord::AttributeAssignment
 
   attr_accessor :reason_date, :reason, :receipt_number, :catalog_number, :other_party_address, :other_party_name, :other_party_ceo,
-                :other_party_number, :application_date, :destination_id, :land_prefecture_id, :land_city, :land_number, :land_branch_number, :type_id, :acreage,
-                :building_prefecture_id, :building_city, :building_number, :building_branch_number, :use_id, :construction, :floor_space, :tax, :user_id
+                :other_party_number, :application_date, :destination_id, :branch_destination_id, :land_prefecture_id, :land_city, :land_number, :land_branch_number,
+                :type_id, :acreage, :building_prefecture_id, :building_city, :building_number, :building_branch_number, :use_id, :construction, :floor_space, :tax, :user_id
 
   with_options presence: true do
     validates :reason_date
     validates :reason
     validates :receipt_number
     validates :destination_id, numericality: {other_than: 1, message: "Select"}
+    validates :branch_destination_id
     validates :tax, numericality: { only_integer: true, message: "Half-width number"}
     validates :other_party_address
     validates :other_party_name
@@ -42,7 +43,7 @@ class ApplicationDatumOtherPartyLandBuilding
 
   def save
     application_datum = ApplicationDatum.create(reason_date: reason_date, reason: reason, receipt_number: receipt_number, catalog_number: catalog_number, application_date: application_date,
-      user_id: user_id, destination_id: destination_id, tax: tax)
+      user_id: user_id, destination_id: destination_id, branch_destination_id: branch_destination_id, tax: tax)
     
     OtherParty.create(address: other_party_address, name: other_party_name, ceo: other_party_ceo, number: other_party_number, application_datum_id: application_datum.id)
 
