@@ -117,9 +117,9 @@
           <%= simple_format "不動産の所在地を管轄する法務局\n
           （「不動産の市町村名 法務局」で検索すると見つかります）" %>
           <%= f.label :destination_id, "・管轄法務局"%><br>
-          <%= f.collection_select(:destination_id, Destination.all, :id, :name,{},{class:"destination"}) %><br>
+          <%= f.collection_select(:destination_id, Destination.all, :id, :name,{},{id:"destination"}) %><br>
           <%= f.label :destination_id, "・支局又は出張所（ない場合は、本局を選択してください）"%><br>
-          <%= f.collection_select(:branch_destination_id, BranchDestination.all, :id, :name,{},{class:"branch-destination"}) %>
+          <%= f.collection_select(:branch_destination_id, BranchDestination.all, :id, :name,{},{Id:"branch-destination"}) %>
         </div>
       </div>
       <%# /申請書提出日、管轄法務局情報 %>
